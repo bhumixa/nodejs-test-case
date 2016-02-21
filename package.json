@@ -19,6 +19,7 @@
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "stripe": "~4.1.0",
-    "express-session":"latest"
+    "express-session":"latest",
+    "connect-timeout":"latest"
   }
 }
