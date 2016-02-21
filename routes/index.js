@@ -16,18 +16,22 @@ var config = require( '../config' );
 
 router.post( '/authenticate', authController.index );
 router.post( '/register', authController.register );
+//router.post('/payment', transactionController.createTransaction);
 
 //login
 router.get( '/login', function( req, res ) {
     res.render( 'login', {
-        title: 'Login'
+        title: 'Login',
+        message: req.session.error,
+        page:req.session.page
     } );
 } );
 
-router.use( function( req, res, next ) {
 
+router.use( function( req, res, next ) {
+    console.log(req.body.token)
     // check header or url parameters or post parameters for token
-    var token = req.body.token || req.query.token || req.headers[ 'x-access-token' ];
+    var token = req.headers[ 'x-access-token' ];
     // decode token
     if ( token ) {
         // verifies secret and checks exp

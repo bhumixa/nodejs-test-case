@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+#token{
+	visibility: hidden
+}
+.errors{
+	color: red;
+}
+.payment-errors{
+	color: red;
+}
+.cardmessage{
+	display: none;
+}

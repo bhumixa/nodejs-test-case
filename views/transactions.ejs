@@ -1,19 +1,87 @@
-<h1>Transactions page</h1>
-<p>Your token:<span id="token"><%=token%></span></p>
 
-<h2>Create Stripe Payments</h2>
+<span id="token" > <%=token%></span>
+<div class="col-sm-6 col-sm-offset-3">
+    <div class="panel panel-default credit-card-box">
+        <div class="panel-heading display-table" >
+            <div class="row display-tr" >
+                <h3 class="panel-title display-td" >Transaction Page</h3>
+                <div class="display-td" >                            
+                    <img class="img-responsive pull-left" src="http://i76.imgup.net/accepted_c22e0.png">
+                </div>
+            </div>                    
+        </div>        
+        <div class="panel-body">
+            <div class="payment-errors"> </div>
+            <div class = "cardmessage pull-right"> Your Card details already Available </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Amount*</label>
+                        <div class="input-group">
+                            <input type="number" name="amount" id="amount" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Currency*</label>
+                        <div class="input-group">
+                            <input type="text" name="currency" id="currency" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="card">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="cardNumber">Card number*</label>
+                            <div class="input-group">
+                                <input type="text" name="cardnumber" class="card-number form-control" value="<%=cardData.last4%>">
+                                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>CVC*</label>
+                            <div class="input-group">
+                                <input type="text" name="cvc" class="card-cvc form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<label for="amount">Amount:</label>
-<input type="number" name="amount" id="amount"><br>
-<label for="currency">Currency: </label>
-<input type="text" name="currency" id="currency"><br>
-<label for="cardnumber">Card number </label>
-<input type="text" name="customerid" id="cardnumber" class="card-number"><br>
-<label for="cvc">CVC: </label>
-<input type="number" name="cvc" id="cvc" class="card-cvc"><br>
-<label for="card-expiry-month">Expired Month: </label>
-<input type="number" name="card-expiry-month" id="card-expiry-month" class="card-expiry-month"><br>
-<label for="card-expiry-year">Expired Year: </label>
-<input type="number" name="card-expiry-year" id="card-expiry-year" class="card-expiry-year"><br>
-<p class="payment-errors"></p>
-<input type="button" class="submittransaction" id="submittransaction" value="Submit">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Expired Month*</label>
+                            <div class="input-group">
+                                <input type="text" name="cardexpirymonth" class="card-expiry-month form-control" value="<%=cardData.exp_month%>" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Expired Year*</label>
+                            <div class="input-group">
+                                <input type="text" name="cardexpiryyear" class="card-expiry-year form-control" value="<%=cardData.exp_year%>" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="customerId" class="customerId" value="<%=customerId%>">
+            <button class="btn btn-primary btn-lg"  id="submittransaction" > Submit </button>
+        </div>
+    </div>  
+
+</div>
