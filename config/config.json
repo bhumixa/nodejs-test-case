@@ -1,0 +1,5 @@
+{
+	"mongoURI":"mongodb://vs2:mitesh@ds013848.mongolab.com:13848/vs2test",
+	"secret": "sk_test_K3P2WImkjKY12IHoqBLKCWOD",
+    "stripeApiKey": "sk_test_K3P2WImkjKY12IHoqBLKCWOD" 
+}
